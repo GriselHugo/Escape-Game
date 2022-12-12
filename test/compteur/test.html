@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div id="timer"></div>
+    <button id="btn" onclick="checkTimer()">Finito ?</button>
+
+    <script>
+        const departMinutes = 0;
+        const departSecondes = 5;
+        let temps = departMinutes * 60 + departSecondes;
+        let timer = null;
+        let minutes = 0;
+        let secondes = 0;
+
+        const timerElement = document.getElementById("timer")
+
+        function endTimer() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        timer = setInterval(() => {
+            minutes = parseInt(temps / 60, 10)
+            secondes = parseInt(temps % 60, 10)
+
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            secondes = secondes < 10 ? "0" + secondes : secondes
+
+            timerElement.innerText = `${minutes}:${secondes}`
+            temps = temps <= 0 ? endTimer() : temps - 1
+        }, 1000)
+
+        function checkTimer() {
+            if (timer === null) {
+                alert("Le timer est terminé");
+            } else {
+                alert(`Le timer n'est pas terminé, il reste ${minutes}:${secondes}`);
+            }
+        }
+    </script>
+</body>
+</html>

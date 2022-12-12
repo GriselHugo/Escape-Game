@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Game - FR</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body style="display: grid;">
+    <div style="place-self: center; width: 95%; overflow: scroll; height: 100%;">
+        <div id="question1">
+        <b> Quelle équipe a gagner la coupe du monde en 2018 : </b><br>
+            <input type="radio" name="question1" id="France" value="France" autocomplete="off"> France
+            <input type="radio" name="question1" id="Croatie" value="Croatie" autocomplete="off"> Croatie
+            <input type="radio" name="question1" id="Brésil" value="Brésil" autocomplete="off"> Brésil
+            <input type="radio" name="question1" id="Belgique" value="Belgique" autocomplete="off"> Belgique
+        </div>
+        <br>
+        <div id="question2">
+            <b> Combien de championnat du monde a remporté Teddy Riner : </b><br>
+            <input type="radio" name="question2" id="8" value="8" autocomplete="off"> 8
+            <input type="radio" name="question2" id="9" value="9" autocomplete="off"> 9
+            <input type="radio" name="question2" id="10" value="10" autocomplete="off"> 10
+            <input type="radio" name="question2" id="11" value="11" autocomplete="off"> 11
+        </div>
+        <br>
+        <div id="question3">
+            <b> Comment se nomme le narrateur dans cette vidéo :</b><br>
+            <input type="radio" name="question3" id="Omar da Fonseca" value="Omar da Fonseca" autocomplete="off"> Omar da Fonseca
+            <input type="radio" name="question3" id="Nelson Monfort" value="Nelson Monfort" autocomplete="off"> Nelson Monfort
+            <input type="radio" name="question3" id="Jano Rességuié" value="Jano Rességuié" autocomplete="off"> Jano Rességuié
+            <input type="radio" name="question3" id="Bixente Lizarazu" value="Bixente Lizarazu" autocomplete="off"> Bixente Lizarazu
+        </div>
+        <br>
+
+        <button type="button" onclick=" checkButton()"> Submit </button>
+        <h3 id="disp"><br></h3>
+    </div>
+
+    <script src="quizz.js"></script>
+</body>
+</html>

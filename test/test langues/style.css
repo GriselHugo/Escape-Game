@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --size: 50px;
+}
+
+body {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    border: 2px solid darkorange;
+    border-radius: 10px;
+    width: 97vw;
+    height: 97vh;
+    margin: 1.5vh auto;
+}
+
+.Langue {
+    width: calc(20vw - 2px);
+    background-color: rebeccapurple;
+    position: absolute;
+    top: 0;
+    transition: top 1s;
+}
+
+.Langue.Open1 {
+    top: calc(1 * var(--size));
+}
+
+.Langue.Open2 {
+    top: calc(2 * var(--size));
+}
+
+.Langue.Open3 {
+    top: calc(3 * var(--size));
+}
+
+.Langue.Open4 {
+    top: calc(4 * var(--size));
+}
+
+.Langue.Open5 {
+    top: calc(5 * var(--size));
+}

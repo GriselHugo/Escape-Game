@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choix langues</title>
+    <!--
+    <icon src="icon.png" type="image/png">
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="position: absolute; left: 78.5vw; width: calc(20vw - 2px); border: 1px solid black">
+        <div class="Langue" style="z-index: 10;" onclick="ToggleLangles()">
+            France
+        </div>
+        <div class="Langue" style="z-index: 9;" onclick="console.log('Maintenant on parle anglais batard')">
+            English
+        </div>
+        <div class="Langue" style="z-index: 8;" onclick="console.log('&#161; Vamos chicos es una final!')">
+            Español
+        </div>
+        <div class="Langue" style="z-index: 7;" onclick="console.log('🤌 Ma che pizza')">
+            Italiano
+        </div>
+        <div class="Langue" style="z-index: 6;" onclick="console.log('*Blague sur les nazis*')">
+            Deutsch
+        </div>
+    </div>
+
+    <script>
+        function ToggleLangles() {
+            let Langues = document.getElementsByClassName("Langue");
+            for (let i = 0; i < Langues.length; i++) {
+                Langues[i].classList.toggle(`Open${i}`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!--
+    <div id="game-container">
+        <style>
+            #game {
+                display: grid;
+                place-items: center;
+            }
+
+            #card {
+                position: absolute;
+                top: 45vh;
+                height: 50vh;
+                aspect-ratio: 2/3;
+                text-align: left;
+                border-radius: 10px;
+            }
+        </style>
+        <p style="width: 90%; margin: auto; margin-top: 2vh;">
+            Il nous reste encore une liste de quelques œuvres à sauver. Mais certaines de cette liste ne sont pas exposées ici et malheureusement nous ne savons plus lesquelles. Peux-tu vérifier celles qui sont encore là et nous indiquer celles qui ne sont plus présentes ?<br>(Glisse à droite si l'oeuvre est là et à gauche si elle n'est pas ici)
+        </p>
+        <div id="game">
+            <div id="card" class="card 1" style="z-index: 10;">
+                <span id="yes" style="position:absolute; width: 100%; height: 100%;">
+                    <img src="img/true.png" alt="yes" style="width: 100%; height: 100%;">
+                </span>
+                <span id="check"  style="position:absolute; background-color: green; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="checkmark-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+                <span id="cross"  style="position:absolute; background-color: red; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="close-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+            </div>
+            <div id="card" class="card 2" style="z-index: 9;">
+                <span id="yes" style="position:absolute; width: 100%; height: 100%;">
+                    <img src="img/true.png" alt="yes" style="width: 100%; height: 100%;">
+                </span>
+                <span id="check"  style="position:absolute; background-color: green; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="checkmark-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+                <span id="cross"  style="position:absolute; background-color: red; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="close-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+            </div>
+            <div id="card" class="card 3" style="z-index: 8;">
+                <span id="no" style="position:absolute; width: 100%; height: 100%;">
+                    <img src="img/false.png" alt="yes" style="width: 100%; height: 100%;">
+                </span>
+                <span id="check"  style="position:absolute; background-color: green; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="checkmark-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+                <span id="cross"  style="position:absolute; background-color: red; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="close-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+            </div>
+            <div id="card" class="card 4" style="z-index: 7;">
+                <span id="yes" style="position:absolute; width: 100%; height: 100%;">
+                    <img src="img/true.png" alt="yes" style="width: 100%; height: 100%;">
+                </span>
+                <span id="check"  style="position:absolute; background-color: green; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="checkmark-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+                <span id="cross"  style="position:absolute; background-color: red; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="close-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+            </div>
+            <div id="card" class="card 5" style="z-index: 6;">
+                <span id="no" style="position:absolute; width: 100%; height: 100%;">
+                    <img src="img/false.png" alt="yes" style="width: 100%; height: 100%;">
+                </span>
+                <span id="check"  style="position:absolute; background-color: green; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="checkmark-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+                <span id="cross"  style="position:absolute; background-color: red; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="close-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+            </div>
+            <div id="card" class="card 6" style="z-index: 5;">
+                <span id="no" style="position:absolute; width: 100%; height: 100%;">
+                    <img src="img/false.png" alt="yes" style="width: 100%; height: 100%;">
+                </span>
+                <span id="check"  style="position:absolute; background-color: green; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="checkmark-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+                <span id="cross"  style="position:absolute; background-color: red; width: 100%; height: 100%; opacity: 0; display:grid; place-items: center;">
+                    <ion-icon name="close-outline" style="font-size: 25vw"></ion-icon>
+                </span>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="js/swipe.js"></script>
+
+    </div>
+
+    -->

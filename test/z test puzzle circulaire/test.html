@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <style>
+        .puzzle-piece {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.75);
+            border-radius: 50%;
+        }
+
+        .selected {
+            filter: brightness(1);
+        }
+
+        ion-icon {
+            font-size: 5vh;
+        }
+    </style>
+
+    <div id="game" style="position: relative; margin: auto; width: 90vw; height: 60vh; border: 1px black solid; color: black; overflow: hidden;">
+        <div class="puzzle-piece" style="background-color: blue; width: 90vw; max-width: 60vh; height: 90vw; max-height: 60vh;">|</div>
+        <div class="puzzle-piece" style="background-color: springgreen; width: 67.5vw; max-width: 45vh; height: 67.5vw; max-height: 45vh;">|</div>
+        <div class="puzzle-piece" style="background-color: yellow; width: 45vw; max-width: 30vh; height: 45vw; max-height: 30vh;">|</div>
+        <div class="puzzle-piece" style="background-color: red; width: 22.5vw; max-width: 15vh; height: 22.5vw; max-height: 15vh;">|</div>
+    </div>
+    <div style="width: 90vw; height: 10vh; border: 1px black solid; margin: auto; display: flex; justify-content: space-between;">
+        <div style="display: grid; place-content: center">
+            <ion-icon id="back" name="caret-back"></ion-icon>
+        </div>
+        <div style="position: relative; width: 5vh;">
+            <div style="position: absolute; top: 0">
+                <ion-icon id="up" name="caret-up"></ion-icon>
+            </div>
+            <div style="position: absolute; bottom: 0">
+                <ion-icon id="down" name="caret-down"></ion-icon>
+            </div>
+        </div>
+        <div style="display: grid; place-content: center">
+            <ion-icon id="forward" name="caret-forward"></ion-icon>
+        </div>
+    </div>
+
+    <script>
+        const game = document.getElementById("game");
+        const pieces = document.getElementsByClassName("puzzle-piece");
+        var selectedPieceN = 0;
+
+        pieces[0].classList.add("selected");
+        let selectedPiece = pieces[0];
+        selectedPieceN = 0;
+        //console.log(selectedPieceN);
+        var RotationAngle = [
+            90,
+            0,
+            270,
+            180
+        ];
+
+        pieces[0].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[0]}deg)`;
+        pieces[1].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[1]}deg)`;
+        pieces[2].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[2]}deg)`;
+        pieces[3].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[3]}deg)`;
+
+        for (let i = 0; i < pieces.length; i++) {
+            pieces[i].addEventListener("click", function() {
+                if (selectedPiece) {
+                    selectedPiece.classList.remove("selected");
+                }
+
+                selectedPiece = pieces[i];
+                selectedPiece.classList.add("selected");
+                selectedPieceN = i;
+                //console.log(selectedPieceN);
+            });
+        }
+
+        document.getElementById("up").addEventListener("click", function() {
+            if (selectedPieceN > 0) {
+                selectedPiece.classList.remove("selected");
+                pieces[selectedPieceN - 1].classList.add("selected");
+                selectedPiece = pieces[selectedPieceN - 1];
+                selectedPieceN--;
+            } else {
+                selectedPiece.classList.remove("selected");
+                pieces[pieces.length - 1].classList.add("selected");
+                selectedPiece = pieces[pieces.length - 1];
+                selectedPieceN = pieces.length - 1;
+            }
+            //console.log(selectedPieceN);
+        });
+
+        document.getElementById("down").addEventListener("click", function() {
+            if (selectedPieceN < pieces.length - 1) {
+                selectedPiece.classList.remove("selected");
+                pieces[selectedPieceN + 1].classList.add("selected");
+                selectedPiece = pieces[selectedPieceN + 1];
+                selectedPieceN++;
+            } else {
+                selectedPiece.classList.remove("selected");
+                pieces[0].classList.add("selected");
+                selectedPiece = pieces[0];
+                selectedPieceN = 0;
+            }
+            //console.log(selectedPieceN);
+        });
+
+        checkWin = function() {
+            for (let i = 0; i < pieces.length; i++) {
+                if (RotationAngle[i] != 0) {
+                    return false;
+                }
+            }
+            pieces[0].style.zIndex = 1;
+            pieces[0].classList.add("selected");
+            return true;
+        }
+
+        document.getElementById("back").addEventListener("click", function() {
+            RotationAngle[selectedPieceN] == 0 ? RotationAngle[selectedPieceN] = 360 - 22.5 : RotationAngle[selectedPieceN] -= 22.5;
+            selectedPiece.style.transform = `translate(-50%, -50%) rotate(${RotationAngle[selectedPieceN]}deg)`;
+            //console.log(RotationAngle);
+            if (checkWin()) {
+                alert("You win!");
+            }
+        });
+
+        document.getElementById("forward").addEventListener("click", function() {
+            RotationAngle[selectedPieceN] == 360 - 22.5 ? RotationAngle[selectedPieceN] = 0 : RotationAngle[selectedPieceN] += 22.5;
+            selectedPiece.style.transform = `translate(-50%, -50%) rotate(${RotationAngle[selectedPieceN]}deg)`;
+            //console.log(RotationAngle);
+            if (checkWin() == true) {
+                alert("You win!");
+            }
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

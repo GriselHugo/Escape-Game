@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Game - FR</title>
+    <link rel="icon" href="icon/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div dir="rtl" style="position: absolute; width: 95vw; margin-top: 1vh;">
+        <div class="Langue" style="width: 5vh; height: 5vh; ;z-index: 10;" onclick="ToggleLangles()">
+            <img id="flags" src="img/francais.jpg" alt="Français">
+        </div>
+        <div class="Langue" style="width: 5vh; height: 5vh; z-index: 9;">
+            <a href="anglais.html"><img  id="flags" src="img/english.jpg" alt="English"></a>
+        </div>
+        <div class="Langue" style="width: 5vh; height: 5vh; z-index: 8;" onclick="console.log('&#161; Vamos chicos es una final!')">
+            <img id="flags"  src="img/espanol.png" alt="Espanol">
+        </div>
+        <div class="Langue" style="width: 5vh; height: 5vh; z-index: 7;" onclick="console.log('🤌 Ma che pizza')">
+            <img id="flags"  src="img/italiano.jpg" alt="Espanol">
+        </div>
+        <div class="Langue" style="width: 5vh; height: 5vh; z-index: 6;" onclick="console.log('*Parle allemand*')">
+            <img id="flags" src="img/deutsch.jpg" alt="Deutsch">
+        </div>
+    </div>
+
+    <div style="width: 100%; height: 100%; display: grid; place-items: center">
+        <div>
+            <div id ="myContainer" style="height: 10vh; width: 100%;position: relative; border: 1px solid yellow;">
+                <div style="outline: 2px solid red; width: 200px; height: 50px; position: absolute; left: calc(50% - 200px/2);" id="myAnimation" >Nom du jeu point jpg</div>
+            </div>
+            <div id="btn-begin" style="border: 1px solid black; height: 20vh; width: 100%; display: grid; place-items: center;">
+                <a id="btn-begin" href="introFr.html">Commencer</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ToggleLangles() {
+            let Langues = document.getElementsByClassName("Langue");
+            for (let i = 0; i < Langues.length; i++) {
+                Langues[i].classList.toggle(`Open${i}`);
+            }
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

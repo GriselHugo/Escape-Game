@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div>
+        <b>Ils nous manquent certaines informations pour continuer la sauvegarde des œuvres. Pouvez vous les retrouver, celles-ci sont présentes sur les œuvres vous devrez être attentifs pour les retrouver ?</b>
+    </div>
+    <br>
+
+    <div id="question">
+        L'inscription est marqué à coté de la place du pilote sur un véhicule capable d'aller à 360 km/h. Quelle est cette inscription ?
+    </div>
+    <div>
+        <div style="height: 1vh"></div>
+        <input type="text" id="input">
+        <div style="height: 1vh"></div>
+        <button id="btn" onclick="checkInput()">Valider</button>
+    </div>
+    <br>
+    <div id="result"></div>
+    <script>
+
+        /*
+        On fait un questionnaire pour retrouver les infos sur les oeuvres (f1 / moto / bateau ?)
+        Ensuite il faut remettre ses oeuvres dans l'ordre chronologique
+        */
+
+        let input = document.getElementById("input");
+        let result = document.getElementById("result");
+
+        function strUpper(str) {
+            return str.toUpperCase();
+        }
+
+        function checkInput() {
+            const inputUpper = strUpper(input.value);
+            console.log(inputUpper);
+
+            if (inputUpper === "JULES") {
+                result.innerText = "Bravo ! Vous avez trouvé la bonne réponse !";
+                input.value = "";
+                document.getElementById("btn").setAttribute("onclick", "checkInput2()");
+                document.getElementById("question").innerText = "La deuxième inscription se trouve juste sous la visière d'un deuxième véhicule, celui ayant appartenu à l'actuel maire de Nice.";
+            } else {
+                result.innerText = "Dommage, vous n'avez pas trouvé la bonne réponse !";
+            }
+        }
+
+        function checkInput2() {;
+            const inputUpper = strUpper(input.value);
+            console.log(inputUpper);
+
+            if (inputUpper === "CHRISTIAN ESTROSI") {
+                result.innerText = "Bravo ! Vous avez trouvé la bonne réponse !";
+                input.value = "";
+                endQuiz();
+            } else {
+                result.innerText = "Dommage, vous n'avez pas trouvé la bonne réponse !";
+            }
+        }
+
+        function endQuiz() {
+            result.innerText = "Bravo ! Vous avez réussi le quiz !";
+        }
+    </script>
+</body>
+</html>

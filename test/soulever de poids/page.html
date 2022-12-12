@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soulever de poids</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div style="width: 90%; margin: auto">
+        Pour passer à l'épreuve suivante, il faut retrouver le mot de passe. Malheureusement celui-ci est caché sous les poids. Pouvouz-vous nous le retrouver ?
+    </div>
+    <br>
+    <div>
+        <input type="text" id="input" placeholder="Mot de passe">
+        <button id="btn" onclick="checkPassword()">Valider</button>
+    </div>
+    <script>
+        const password = "1234";
+        const input = document.getElementById("input");
+        const btn = document.getElementById("btn");
+
+        function checkPassword() {
+            if (input.value === password) {
+                alert("Bravo, vous avez trouvé le mot de passe");
+            } else {
+                alert("Le mot de passe est incorrect");
+            }
+        }
+    </script>
+</body>
+</html>
