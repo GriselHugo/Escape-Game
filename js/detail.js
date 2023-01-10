@@ -78,7 +78,7 @@ function putSwipeCardGame() {
     <p style="height: 25vh; margin-top: 2vh;">
         Il nous reste encore une liste de quelques œuvres à sauver. Mais certaines de cette liste ne sont pas exposées ici et malheureusement
          nous ne savons plus lesquelles. Peux-tu vérifier celles qui sont encore là et nous indiquer celles qui ne sont plus présentes ?
-         <br>(Glisse à droite si l'oeuvre est là et à gauche si elle n'est pas ici)
+         <br>(Glisse à droite si l'oeuvre est là et à gauche si elle n'est pas ici - Attention les mauvaises réponses vous font perdre du temps !)
     </p>
     <div id="game">
         <div id="card" class="card 1" style="z-index: 10;">

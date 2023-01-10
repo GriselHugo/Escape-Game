@@ -171,10 +171,11 @@ function putNatation() {
     </p>
     <br>
     <button onclick="move()" id="bgn-btn">Commencer l'épreuve</button>
-    <br>
+    <br><br>
     <div id="game" class="myProgress">
         <div id="myBar">30s</div>
     </div>
+    <br><br>
     <div id="timer">
     `;
 

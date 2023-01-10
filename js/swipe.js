@@ -85,5 +85,5 @@ cards.forEach(card => {
 });
 
 function putNextGame() {
-    alert("You have finished the game!");
+    window.location.replace='../victoire.html'
 }
