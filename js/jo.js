@@ -147,16 +147,35 @@ game.addEventListener('touchend', e => {
 
 function putNatation() {
     document.getElementById("game-container").innerHTML = `
+    <style>
+    .myProgress {
+        width: 95vw;
+        margin: auto;
+        background-color: #ddd;
+        border: 1px solid black;
+      }
+
+      #myBar {
+        width: 0%;
+        height: 30px;
+        background-color: DodgerBlue;
+        text-align: center;
+        line-height: 30px;
+        color: black;
+      }
+    </style>
     <p>
         Malheureusement cette partie du musée est innondée, vous devrez faire des mouvements de natation pendant au moins 30 secondes.
         <br><br>
         <img src="img/crawl.gif" alt="natation" id="natation" style="height: 10vh">
     </p>
     <br>
-    <div id="timer">
-    <button id="btn" onclick="beginTimer()">Commencer l'épreuve</button>
+    <button onclick="move()" id="bgn-btn">Commencer l'épreuve</button>
+    <br>
+    <div id="game" class="myProgress">
+        <div id="myBar">30s</div>
     </div>
-    <progress id="progress" value="0" max="100" style="visibility: hidden"></progress>
+    <div id="timer">
     `;
 
     var NewScrip = document.createElement('script');

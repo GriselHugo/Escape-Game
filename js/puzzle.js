@@ -17,6 +17,18 @@ pieces[1].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[1]}deg
 pieces[2].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[2]}deg)`;
 pieces[3].style.transform = `translate(-50%, -50%) rotate(${RotationAngle[3]}deg)`;
 
+function putBorder() {
+    for (let i = 0; i < pieces.length; i++) {
+        if (RotationAngle[i] == 0) {
+            pieces[i].style.outline = "2px solid green";
+        } else {
+            pieces[i].style.outline = "2px solid red";
+        }
+    }
+}
+
+putBorder();
+
 for (let i = 0; i < pieces.length; i++) {
     pieces[i].addEventListener("click", function() {
         if (selectedPiece) {
@@ -84,6 +96,11 @@ checkWin = function() {
 
 document.getElementById("back").addEventListener("click", function() {
     RotationAngle[selectedPieceN] == 0 ? RotationAngle[selectedPieceN] = 360 - 22.5 : RotationAngle[selectedPieceN] -= 22.5;
+    if (RotationAngle[selectedPieceN] == 0) {
+        pieces[selectedPieceN].style.outline = "2px solid green";
+    } else {
+        pieces[selectedPieceN].style.outline = "2px solid red";
+    }
     selectedPiece.style.transform = `translate(-50%, -50%) rotate(${RotationAngle[selectedPieceN]}deg)`;
     //console.log(RotationAngle);
     checkWin();
@@ -91,6 +108,11 @@ document.getElementById("back").addEventListener("click", function() {
 
 document.getElementById("forward").addEventListener("click", function() {
     RotationAngle[selectedPieceN] == 360 - 22.5 ? RotationAngle[selectedPieceN] = 0 : RotationAngle[selectedPieceN] += 22.5;
+    if (RotationAngle[selectedPieceN] == 0) {
+        pieces[selectedPieceN].style.outline = "2px solid green";
+    } else {
+        pieces[selectedPieceN].style.outline = "2px solid red";
+    }
     selectedPiece.style.transform = `translate(-50%, -50%) rotate(${RotationAngle[selectedPieceN]}deg)`;
     //console.log(RotationAngle);
     checkWin();

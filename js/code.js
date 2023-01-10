@@ -1,5 +1,5 @@
 function checkCode() {
-    if (document.getElementById("input").value == "10-23-16-6-21" || document.getElementById("input").value == "10231621") {
+    if (document.getElementById("input").value == "10-23-16-6-21" || document.getElementById("input").value == "102316621") {
         document.getElementById("result").innerHTML = "Bravo ! Tu as réussi !<br><button onclick='putGameDetail()'>Jeu suivant</button>";
     } else {
         document.getElementById("result").innerHTML = "Ce n'est pas le bon code !";

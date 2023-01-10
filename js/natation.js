@@ -3,31 +3,32 @@ const departSecondes = 30;
 const tempsDepart = departMinutes * 60 + departSecondes;
 let temps = departMinutes * 60 + departSecondes;
 
-function beginTimer() {
-    let timer = null;
-    let minutes = 0;
-    let secondes = 0;
-    let timerElement = document.getElementById("timer");
-    document.getElementById("progress").style.visibility = "visible";
-
-    timer = setInterval(() => {
-        minutes = parseInt(temps / 60, 10);
-        secondes = parseInt(temps % 60, 10);
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        secondes = secondes < 10 ? "0" + secondes : secondes;
-        timerElement.innerHTML = `${minutes}:${secondes}`
-        document.getElementById("progress").value = 100 - (temps / tempsDepart) * 100;
-        temps = temps <= 0 ? endTimer() : temps - 1;
-    }, 1000
-    );
-
-    function endTimer() {
-        document.getElementById("progress").style.visibility = "hidden";
-        clearInterval(timer);
-        timer = null;
-        progressInterval = null;
-        timerElement.innerHTML = "Terminé !<br><button onclick='putIntroCircularPuzzle()' id='start'>Suite</button>"
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    document.getElementById("bgn-btn").style.visibility = "hidden";
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var time = 0;
+    var id = setInterval(frame, 1000);
+    function frame() {
+      if (width >= 99.99999) {
+        clearInterval(id);
+        i = 0;
+        changeText();
+      } else {
+        width += (100 / 30);
+        time++;
+        elem.style.width = width + "%";
+        elem.innerHTML = 30 - time  + "s";
+      }
     }
+  }
+}
+
+function changeText() {
+    document.getElementById("timer").innerHTML = "Bravo vous avez terminé cette épreuve !<br><button onclick='putIntroCircularPuzzle()' id='start'>Suite</button>"
 }
 
 function putIntroCircularPuzzle() {
